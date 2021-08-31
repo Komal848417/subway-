@@ -1,25 +1,25 @@
 var runner,runner_runing,edges;
-var pathimage;
+var pathImg;
 var path
 
 
 function preload(){
   runner_runing = loadAnimation("runner-1.png","runner-1.png");
-  runnerImg=loadImage("path.png");
+  pathImg=loadImage("path.png");
 
 
 }
 
 function setup(){
   createCanvas(400,400);
-  runner=createSprite(100,100);
-  runner=createSprite(200,200,30,30);
+  runner=createSprite(20,20,400,400);
+  path=createSprite(200,200,450,450)
   path.addImage(pathImg);
-  path.velocityX=-2;
-  path.scale=0.3
+  runner.velocityX=-2;
+  path.scale=0.1
   runner.addAnimation("running",runner_runing);
   edges = createEdgeSprites();
-  runner.scale = 0.5;
+  runner.scale = 0.1;
   runner.x = 50
  
 }
