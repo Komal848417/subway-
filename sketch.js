@@ -12,25 +12,25 @@ function preload(){
 
 function setup(){
   createCanvas(400,400);
-  runner=createSprite(20,20,400,400);
   path=createSprite(200,200,450,450)
+  runner=createSprite(180,340,30,30);
   path.addImage(pathImg);
-  runner.velocityX=-2;
-  path.scale=0.1
+  path.scale=1.2
   runner.addAnimation("running",runner_runing);
   edges = createEdgeSprites();
-  runner.scale = 0.1;
+  runner.scale = 0.08;
   runner.x = 50
  
 }
 
 function draw() {
   background("black");
+  path.velocityY=4
+  runner.x=World.mouseX
   console.log(runner.x);
-  if(path.x < 0){
-    path.y=path.width/2;
+  if(path.y > 400){
+    path.y=height/2;
     }
-    runner.velocityY = runner.velocityY + 0.5;
-    runner.collide(runner)
+    runner.collide(edges)
     drawSprites();
 }
